@@ -50,5 +50,29 @@ namespace formLogin
             sale.Dock = DockStyle.Fill;
             sale.Show();
         }
+
+        private void producttypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+            productType ProductType = new productType();
+            ProductType.MdiParent = this;
+            ProductType.Dock = DockStyle.Fill;
+            ProductType.Show();
+        }
+
+        private void userToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+            userForm UserForm = new userForm();
+            UserForm.MdiParent = this;
+            UserForm.Dock = DockStyle.Fill;
+            UserForm.Show();
+        }
     }
 }

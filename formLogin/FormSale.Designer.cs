@@ -84,6 +84,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(543, 215);
             this.dataGridView1.TabIndex = 91;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
@@ -150,6 +151,7 @@
             this.la_total.Size = new System.Drawing.Size(40, 25);
             this.la_total.TabIndex = 88;
             this.la_total.Text = "....";
+            this.la_total.Click += new System.EventHandler(this.la_total_Click);
             // 
             // label10
             // 
@@ -196,6 +198,7 @@
             this.b_Sale.TabIndex = 84;
             this.b_Sale.Text = "sale";
             this.b_Sale.UseVisualStyleBackColor = true;
+            this.b_Sale.Click += new System.EventHandler(this.b_Sale_Click_1);
             // 
             // b0
             // 
@@ -206,6 +209,7 @@
             this.b0.TabIndex = 83;
             this.b0.Text = "0";
             this.b0.UseVisualStyleBackColor = true;
+            this.b0.Click += new System.EventHandler(this.b0_Click_1);
             // 
             // b_Dot
             // 
@@ -215,6 +219,7 @@
             this.b_Dot.Size = new System.Drawing.Size(56, 41);
             this.b_Dot.TabIndex = 82;
             this.b_Dot.UseVisualStyleBackColor = true;
+            this.b_Dot.Click += new System.EventHandler(this.b_Dot_Click_1);
             // 
             // b_Clear
             // 
@@ -225,6 +230,7 @@
             this.b_Clear.TabIndex = 81;
             this.b_Clear.Text = "C";
             this.b_Clear.UseVisualStyleBackColor = true;
+            this.b_Clear.Click += new System.EventHandler(this.b_Clear_Click_1);
             // 
             // b9
             // 
@@ -235,6 +241,7 @@
             this.b9.TabIndex = 80;
             this.b9.Text = "9";
             this.b9.UseVisualStyleBackColor = true;
+            this.b9.Click += new System.EventHandler(this.b9_Click_1);
             // 
             // b8
             // 
@@ -245,6 +252,7 @@
             this.b8.TabIndex = 79;
             this.b8.Text = "8";
             this.b8.UseVisualStyleBackColor = true;
+            this.b8.Click += new System.EventHandler(this.b8_Click_1);
             // 
             // b7
             // 
@@ -255,6 +263,7 @@
             this.b7.TabIndex = 78;
             this.b7.Text = "7";
             this.b7.UseVisualStyleBackColor = true;
+            this.b7.Click += new System.EventHandler(this.b7_Click_1);
             // 
             // b6
             // 
@@ -265,6 +274,7 @@
             this.b6.TabIndex = 77;
             this.b6.Text = "6";
             this.b6.UseVisualStyleBackColor = true;
+            this.b6.Click += new System.EventHandler(this.b6_Click_1);
             // 
             // b5
             // 
@@ -275,6 +285,7 @@
             this.b5.TabIndex = 76;
             this.b5.Text = "5";
             this.b5.UseVisualStyleBackColor = true;
+            this.b5.Click += new System.EventHandler(this.b5_Click_1);
             // 
             // b4
             // 
@@ -285,6 +296,7 @@
             this.b4.TabIndex = 75;
             this.b4.Text = "4";
             this.b4.UseVisualStyleBackColor = true;
+            this.b4.Click += new System.EventHandler(this.b4_Click_1);
             // 
             // b3
             // 
@@ -295,6 +307,7 @@
             this.b3.TabIndex = 74;
             this.b3.Text = "3";
             this.b3.UseVisualStyleBackColor = true;
+            this.b3.Click += new System.EventHandler(this.b3_Click_1);
             // 
             // b2
             // 
@@ -305,6 +318,7 @@
             this.b2.TabIndex = 73;
             this.b2.Text = "2";
             this.b2.UseVisualStyleBackColor = true;
+            this.b2.Click += new System.EventHandler(this.b2_Click_1);
             // 
             // b1
             // 
@@ -315,6 +329,7 @@
             this.b1.TabIndex = 72;
             this.b1.Text = "1";
             this.b1.UseVisualStyleBackColor = true;
+            this.b1.Click += new System.EventHandler(this.b1_Click_1);
             // 
             // bOk
             // 
@@ -325,6 +340,7 @@
             this.bOk.TabIndex = 71;
             this.bOk.Text = "ok";
             this.bOk.UseVisualStyleBackColor = true;
+            this.bOk.Click += new System.EventHandler(this.bOk_Click_1);
             // 
             // la_amount
             // 
@@ -357,6 +373,9 @@
             this.tID.Name = "tID";
             this.tID.Size = new System.Drawing.Size(100, 38);
             this.tID.TabIndex = 68;
+            this.tID.TextChanged += new System.EventHandler(this.tID_TextChanged);
+            this.tID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tID_KeyDown);
+            this.tID.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tID_KeyUp_1);
             // 
             // label5
             // 
@@ -382,6 +401,7 @@
             0,
             0,
             0});
+            this.nu_count.ValueChanged += new System.EventHandler(this.nu_count_ValueChanged_1);
             // 
             // label4
             // 

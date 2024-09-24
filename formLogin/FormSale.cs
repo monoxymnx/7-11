@@ -29,35 +29,6 @@ namespace formLogin
 
         }
 
-        private void tID_KeyUp(object sender, KeyEventArgs e)
-        {
-
-            try
-            {
-                if (tID.TextLength == 4)
-                {
-                    cmd = new SqlCommand("SELECT * FROM Product1 WHERE pID = " + tID.Text + "", conn);
-                    conn.Open();
-                    adapter = new SqlDataAdapter(cmd);
-                    conn.Close();
-                    DataSet ds = new DataSet();
-                    adapter.Fill(ds);
-                    la_product.Text = ds.Tables[0].Rows[0].ItemArray[1].ToString();
-                    la_amount.Text = "1";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.StackTrace);
-            }
-
-        }
-
-        private void nu_count_ValueChanged(object sender, EventArgs e)
-        {
-            la_amount.Text = nu_count.Value.ToString();
-        }
-
         private void calTotal()
         {
 
@@ -72,113 +43,6 @@ namespace formLogin
         {
             numCash += getCash;
             la_recive.Text = string.Format(" {0:#,##0.00}", double.Parse(numCash));
-        }
-
-        private void bOk_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                cmd = new SqlCommand("SELECT * FROM Product1 WHERE pID = " + tID.Text + "", conn);
-                conn.Open();
-                adapter = new SqlDataAdapter(cmd);
-                conn.Close();
-                DataSet ds = new DataSet();
-                adapter.Fill(ds);
-                int p = Convert.ToInt16(ds.Tables[0].Rows[0].ItemArray[2]);
-                int a = Convert.ToInt16(la_amount.Text);
-                int total = p * a;
-                string[] row = new string[] { "" + ds.Tables[0].Rows[0].ItemArray[0], "" + ds.Tables[0].Rows[0].ItemArray[1], "" + la_amount.Text, "" + ds.Tables[0].Rows[0].ItemArray[2], "" + total };
-                dataGridView1.Rows.Add(row);
-                proCount++;
-                calTotal();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.StackTrace);
-            }
-        }
-
-        private void productDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void productDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index;
-            index = e.RowIndex;
-            if (index >= 0)
-            {
-                DialogResult dialogResult = MessageBox.Show("Are you sure to delete?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    dataGridView1.Rows.RemoveAt(index);
-                    calTotal();
-                }
-            }
-
-
-        }
-
-        private void b0_Click(object sender, EventArgs e)
-        {
-            getCash("0");
-        }
-
-        private void b1_Click(object sender, EventArgs e)
-        {
-            getCash("1");
-        }
-
-        private void b2_Click(object sender, EventArgs e)
-        {
-            getCash("2");
-        }
-
-        private void b3_Click(object sender, EventArgs e)
-        {
-            getCash("3");
-        }
-
-        private void b4_Click(object sender, EventArgs e)
-        {
-            getCash("4");
-        }
-
-        private void b5_Click(object sender, EventArgs e)
-        {
-            getCash("5");
-        }
-
-        private void b6_Click(object sender, EventArgs e)
-        {
-            getCash("6");
-        }
-
-        private void b7_Click(object sender, EventArgs e)
-        {
-            getCash("7");
-        }
-
-        private void b8_Click(object sender, EventArgs e)
-        {
-            getCash("8");
-        }
-
-        private void b9_Click(object sender, EventArgs e)
-        {
-            getCash("9");
-        }
-
-        private void b_Dot_Click(object sender, EventArgs e)
-        {
-            getCash(".");
-        }
-
-        private void b_Clear_Click(object sender, EventArgs e)
-        {
-            numCash = null;
-            la_recive.Text = string.Empty;
         }
 
         private void updateAmount()
@@ -207,7 +71,68 @@ namespace formLogin
             }
         }
 
-        private void b_Sale_Click(object sender, EventArgs e)
+        private void b1_Click_1(object sender, EventArgs e)
+        {
+            getCash("1");
+        }
+
+        private void b2_Click_1(object sender, EventArgs e)
+        {
+            getCash("2");
+        }
+
+        private void b3_Click_1(object sender, EventArgs e)
+        {
+            getCash("3");
+        }
+
+        private void b4_Click_1(object sender, EventArgs e)
+        {
+            getCash("4");
+        }
+
+        private void b5_Click_1(object sender, EventArgs e)
+        {
+            getCash("5");
+        }
+
+        private void b6_Click_1(object sender, EventArgs e)
+        {
+            getCash("6");
+        }
+
+        private void b7_Click_1(object sender, EventArgs e)
+        {
+            getCash("7");
+        }
+
+        private void b8_Click_1(object sender, EventArgs e)
+        {
+            getCash("8");
+        }
+
+        private void b9_Click_1(object sender, EventArgs e)
+        {
+            getCash("9");
+        }
+
+        private void b_Clear_Click_1(object sender, EventArgs e)
+        {
+            numCash = null;
+            la_recive.Text = string.Empty;
+        }
+
+        private void b_Dot_Click_1(object sender, EventArgs e)
+        {
+            getCash(".");
+        }
+
+        private void b0_Click_1(object sender, EventArgs e)
+        {
+            getCash("0");
+        }
+
+        private void b_Sale_Click_1(object sender, EventArgs e)
         {
             if (la_recive.Text == string.Empty)
             {
@@ -223,6 +148,77 @@ namespace formLogin
                 la_change.Text = change.ToString();
             }
             updateAmount();
+        }
+
+        private void la_total_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void bOk_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                cmd = new SqlCommand("SELECT * FROM Product1 WHERE pID = " + tID.Text + "", conn);
+                conn.Open();
+                adapter = new SqlDataAdapter(cmd);
+                conn.Close();
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                int p = Convert.ToInt16(ds.Tables[0].Rows[0].ItemArray[2]);
+                int a = Convert.ToInt16(la_amount.Text);
+                int total = p * a;
+                string[] row = new string[] { "" + ds.Tables[0].Rows[0].ItemArray[0], "" + ds.Tables[0].Rows[0].ItemArray[1], "" + la_amount.Text, "" + ds.Tables[0].Rows[0].ItemArray[2], "" + total };
+                dataGridView1.Rows.Add(row);
+                proCount++;
+                calTotal();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.StackTrace);
+            }
+        }
+
+        private void nu_count_ValueChanged_1(object sender, EventArgs e)
+        {
+            la_amount.Text = nu_count.Value.ToString();
+        }
+
+        private void tID_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void tID_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (tID.TextLength == 4)
+                {
+                    cmd = new SqlCommand("SELECT * FROM Product1 WHERE pID = " + tID.Text + "", conn);
+                    conn.Open();
+                    adapter = new SqlDataAdapter(cmd);
+                    conn.Close();
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds);
+                    la_product.Text = ds.Tables[0].Rows[0].ItemArray[1].ToString();
+                    la_amount.Text = "1";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.StackTrace);
+            }
         }
     }
 }
